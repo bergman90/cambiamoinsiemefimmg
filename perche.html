@@ -1,89 +1,144 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Perché ci candidiamo – FIMMG Cambiamo Insieme</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-        .section-content {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .section-content p {
-            font-size: 1em;
-            line-height: 1.6;
-            margin-bottom: 1.5em;
-        }
-    </style>
+  <title>Perché ci candidiamo – FIMMG Cambiamo Insieme</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .section-content {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-content p {
+	  font-size: 1em;
+	  line-height: 1.6;
+	  margin-bottom: 1.5em;
+	  opacity: 0;
+	  transform: translateY(30px);
+	  transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+	}
+
+    .section-content p.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .separator {
+      width: 150px;
+      height: 1.5px;
+      background-color: #ccc;
+      margin: 2em auto;
+    }
+
+	h2.centered-title {
+	  text-align: center;
+	  margin-top: 2em;
+	  font-size: 1.3em;
+	}
+
+    }
+  </style>
 </head>
 <body class="is-preload">
-    <div id="wrapper">
+  <div id="wrapper">
 
-        <!-- Header -->
-        <header id="header">
-            <div class="inner">
-                <a href="index.html" class="logo">
-                    <span class="symbol"></span><span class="title">HOME</span>
-                </a>
-                <nav>
-                    <ul>
-                        <li><a href="#menu">Menu</a></li>
-                    </ul>
-                </nav>
+    <!-- Header (logo + motto) -->
+    <header id="header">
+	  <div class="inner" style="justify-content: flex-end;">
+		<nav>
+		  <ul>
+			<li><a href="#menu">Menu</a></li>
+		  </ul>
+		</nav>
+	  </div>
+	</header>
+
+
+    <!-- Menu a scomparsa -->
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="perche.html">Perché ci candidiamo</a></li>
+        <li><a href="cosa-vogliamo.html">Cosa vogliamo fare</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+
+        <!-- Header grafico cliccabile -->
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+          <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
+            <img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;" />
+            <div>
+              <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
+              <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
             </div>
-        </header>
+          </header>
+        </a>
 
-        <!-- Menu -->
-        <nav id="menu">
-            <h2>Menu</h2>
-            <ul>
-				<li><a href="index.html">Homepage</a></li>
-                <li><a href="chi-siamo.html">Chi siamo</a></li>
-                <li><a href="perche.html">Perché ci candidiamo</a></li>
-                <li><a href="cosa-vogliamo.html">Cosa vogliamo fare</a></li>
-            </ul>
-        </nav>
+        <!-- Titolo e linea -->
+		<div class="separator"></div>
+        <h2 class="centered-title">Perché ci candidiamo</h2>
 
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
-                <h1 style="margin-bottom: 20px;">Perché ci candidiamo</h1>
-                <div class="section-content">
-                    <p>Alla ASL di Cagliari, nonostante le promesse e gli incontri istituzionali, nulla è stato fatto per alleggerire il peso della burocrazia che grava sulla medicina generale. Al contrario: moduli, flussi, controlli ridondanti e nuove incombenze digitali si sono moltiplicati senza alcuna valutazione d'impatto né consultazione preventiva con i medici.
-
-					Ogni innovazione annunciata si è tradotta, nei fatti, in un aumento del tempo sottratto all'assistenza, trasformando i medici in impiegati a prestazione continua, obbligati a rincorrere autorizzazioni, piattaforme malfunzionanti e percorsi amministrativi complessi. Nessuno sembra voler ascoltare ciò che ripetiamo da anni: la burocrazia non cura.
-
-					L’impressione diffusa è che la medicina generale venga data per scontata, compressa tra responsabilità crescenti e nessun supporto concreto. Eppure, è nei nostri ambulatori che si costruisce ogni giorno la tenuta del sistema. Serve un cambio di paradigma, e serve ora.</p>
-                </div>
-            </div>
+        <!-- Testo a comparsa -->
+        <div class="section-content">
+          <p>Alla ASL di Cagliari, nonostante le promesse e gli incontri istituzionali, nulla è stato fatto per alleggerire il peso della burocrazia che grava sulla medicina generale. Al contrario: moduli, flussi, controlli ridondanti e nuove incombenze digitali si sono moltiplicati senza alcuna valutazione d'impatto né consultazione preventiva con i medici.</p>
+          <p>Ogni innovazione annunciata si è tradotta, nei fatti, in un aumento del tempo sottratto all'assistenza, trasformando i medici in impiegati a prestazione continua, obbligati a rincorrere autorizzazioni, piattaforme malfunzionanti e percorsi amministrativi complessi. Nessuno sembra voler ascoltare ciò che ripetiamo da anni: <strong>la burocrazia non cura</strong>.</p>
+          <p>L’impressione diffusa è che la medicina generale venga data per scontata, compressa tra responsabilità crescenti e nessun supporto concreto. Eppure, è nei nostri ambulatori che si costruisce ogni giorno la tenuta del sistema. Serve un cambio di paradigma, e serve ora.</p>
         </div>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                <section>
-                    <ul class="icons">
-                        <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="https://wa.me/393331112233" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-                        <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-                    </ul>
-                </section>
-                <ul class="copyright">
-                    <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </div>
-        </footer>
-
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <section>
+          <ul class="icons">
+            <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="https://wa.me/393331112233" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+            <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+          </ul>
+        </section>
+        <ul class="copyright">
+          <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script comparsa testo -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // una volta visibile, non osservarlo più
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".section-content p").forEach(p => {
+        observer.observe(p);
+      });
+    });
+  </script>
 </body>
 </html>

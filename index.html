@@ -44,6 +44,12 @@
 				height: 100%;
 				object-fit: cover;
 			}
+			    .separator {
+			  width: 150px;
+			  height: 1.5px;
+			  background-color: #ccc;
+			  margin: 2em auto;
+			}
 			
 
 		</style>
@@ -51,24 +57,15 @@
 	<body class="is-preload">
 		<!-- Wrapper -->
 		<div id="wrapper">
-
-			<!-- Header -->
+		<!-- Header -->
 			<header id="header">
-				<div class="inner">
-
-					<!-- Logo -->
-					<a href="index.html" class="logo">
-						<span class="symbol"></span><span class="title">HOME</span>
-					</a>
-
-					<!-- Nav -->
-					<nav>
-						<ul>
-							<li><a href="#menu">Menu</a></li>
-						</ul>
-					</nav>
-
-				</div>
+			  <div class="inner" style="justify-content: flex-end;">
+				<nav>
+				  <ul>
+					<li><a href="#menu">Menu</a></li>
+				  </ul>
+				</nav>
+			  </div>
 			</header>
 
 			<!-- Menu -->
@@ -85,13 +82,15 @@
 			<!-- Main -->
 			<div id="main">
 				<div class="inner">
-					<header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center;">
+					<header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px;">
 						<img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;" />
 						<div>
-							<h1 style="margin: 0;">FIMMG – Cambiamo Insieme</h1>
+							<h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
 							<p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
 						</div>
 					</header>
+				<div class="separator"></div>
+
 
 					<section class="tiles" style="margin-top: 1em;">
 						<article class="style1">
@@ -130,7 +129,7 @@
 					</section>
 
 					<!-- RSS Feed Slideshow -->
-					<section style="margin-top: 10px;">
+					<section style="margin-top: 20px;">
 						<h2>Ultime notizie dalla medicina generale</h2>
 						<div id="rss-slideshow" class="slideshow">
 							<ul id="rss-feed"></ul>
