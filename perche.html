@@ -46,9 +46,11 @@
 
 	.section-content {
 	  max-width: 960px;
-	  margin: 2em auto 0 auto;   /* margine sopra, blocco centrato */
-	  text-align: justify;       /* testo giustificato */
+	  margin: 1.5em auto;
+	  padding: 0 1em;
+	  text-align: justify;
 	}
+
 
     .section-content p {
 	  font-size: 1em;
@@ -76,22 +78,31 @@
 	  margin-top: 2em;
 	  font-size: 1.3em;
 	}
-		.image-half-top,
+	.image-half-top,
 	.image-half-bottom {
 	  width: 100%;
-	  height: 300px;
-	  background-image: url('images/change.jpg');
-	  background-size: cover;
 	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: contain;
+	  display: block;
+	}
+
+	/* Altezza gestita con padding per evitare problemi */
+	.image-half-top::before,
+	.image-half-bottom::before {
+	  content: "";
+	  display: block;
+	  padding-top: 25%; /* Altezza in proporzione alla larghezza */
 	}
 
 	.image-half-top {
-	  background-position: top center;
+	  background-image: url('images/changehalftop.jpg');
 	}
 
 	.image-half-bottom {
-	  background-position: bottom center;
+	  background-image: url('images/changehalfbot.jpg');
 	}
+
 
   </style>
 </head>
