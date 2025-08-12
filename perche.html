@@ -28,6 +28,7 @@
     .section-content p {
       font-size: 1em;
       line-height: 1.7;
+	  color: #111; /* testo più scuro rispetto al grigio standard */
     }
 
     .section-content blockquote {
@@ -72,8 +73,9 @@
       width: 150px;
       height: 1.5px;
       background-color: #ccc;
-      margin: 2em auto;
+      margin: -2em auto;
     }
+
 
 	h2.centered-title {
 	  text-align: center;
@@ -99,6 +101,7 @@
 
 	.image-half-top {
 	  background-image: url('images/changehalftop.jpg');
+	  	  margin-top: -20px;    /* spazio sopra l'immagine bottom */
 	}
 
 	.image-half-bottom {
@@ -111,8 +114,11 @@
 <body class="is-preload">
 <!-- Logo Centrale -->
 		<div style="text-align: center; margin-top: 1em;">
-		  <img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
+		  <a href="index.html">
+			<img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
+		  </a>
 		</div>
+		
   <div id="wrapper">
 
     <!-- Header (logo + motto) -->
@@ -142,16 +148,17 @@
     <div id="main">
       <div class="inner">
 
-        <!-- Header grafico cliccabile -->
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-          <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
-   
-            <div>
-              <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
-              <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
-            </div>
-          </header>
-        </a>
+<!--
+<a href="index.html" style="text-decoration: none; color: inherit;">
+  <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
+    <div>
+      <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
+      <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
+    </div>
+  </header>
+</a>
+-->
+
 
         <!-- Titolo e linea -->
 		<div class="separator"></div>
@@ -164,18 +171,18 @@
 		 <section class="section-content">
 
 		  <p>
-			La medicina generale sta vivendo una crisi strutturale. Negli ultimi dieci anni il carico clinico e burocratico sono aumentati in maniera esponenziale, senza un incremento sostanziale delle risorse umane o economiche. Il burnout è in crescita e molt* collegh* lavorano in condizioni di isolamento, senza supporti adeguati.
+			La medicina generale sta vivendo una crisi strutturale. Negli ultimi dieci anni il <b>carico clinico e burocratico sono aumentati in maniera esponenziale</b>, senza un incremento sostanziale delle risorse umane o economiche. Il burnout è in crescita e molt* collegh* lavorano in condizioni di isolamento, senza supporti adeguati.
 		  </p>
 
 		  <p>
-			Stiamo affrontando sfide profonde, destinate a diventare sempre più complesse: invecchiamento della popolazione, aumento delle cronicità, complessità terapeutica, consumismo sanitario, nuove fragilità sociali e crisi vocazionale, questa professione così come è non attira le nuove generazioni. Ma ad affrontare questi ostacoli siamo spesso rimasti sol*, con un SSN in aperta ritirata dai territori, nonostante i proclami.
+			Stiamo affrontando <b>sfide profonde</b>, destinate a diventare sempre più complesse: invecchiamento della popolazione, aumento delle cronicità, complessità terapeutica, consumismo sanitario, nuove fragilità sociali e crisi vocazionale, <b>questa professione così come è non attira le nuove generazioni</b> Ma ad affrontare questi ostacoli siamo spesso rimasti sol*, con un SSN in aperta ritirata dai territori, nonostante i proclami.
 		  </p>
 
 		  <p>
-			In questi anni non sono stati ottenuti risultati concreti per ridurre la burocrazia, migliorare l'organizzazione ed affrontare le criticità. Le decisioni spesso vengono calate dall’alto, senza un reale confronto. Da più di <strong>15 anni</strong> non viene rinnovato un AIR in Sardegna.</p> 
+			In questi anni non sono stati ottenuti risultati concreti per ridurre la burocrazia, migliorare l'organizzazione ed affrontare le criticità. Le decisioni spesso vengono calate dall’alto, senza un reale confronto. <b>Da più di 15 anni non viene rinnovato un AIR in Sardegna</b>.</p> 
 			
 		  <p>
-		  Noi crediamo sia il momento di cambiare approccio.
+		  Noi crediamo sia il momento di <b>cambiare approccio</b>.
 		  </p>
 
 		  <blockquote>
@@ -196,14 +203,7 @@
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
-        <section>
-          <ul class="icons">
-            <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="https://wa.me/393331112233" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-            <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-          </ul>
-        </section>
+
         <ul class="copyright">
           <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>

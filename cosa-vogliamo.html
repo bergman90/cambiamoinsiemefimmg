@@ -1,40 +1,41 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-	<!-- Open Graph tags -->
-		<meta property="og:title" content="FIMMG, Cambiamo Insieme" />
-		<meta property="og:description" content="Trasparenza, partecipazione, rinnovamento." />
-		<meta property="og:image" content="https://cagliaricambiamoinsieme.it/images/logo.png" />
-		<meta property="og:url" content="cagliaricambiamoinsieme.it/" />
-		<meta property="og:type" content="website" />
-		
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="FIMMG, Cambiamo Insieme" />
+  <meta property="og:description" content="Trasparenza, partecipazione, rinnovamento." />
+  <meta property="og:image" content="https://cagliaricambiamoinsieme.it/images/logo.png" />
+  <meta property="og:url" content="https://cagliaricambiamoinsieme.it/" />
+  <meta property="og:type" content="website" />
+
   <title>Cosa vogliamo fare - FIMMG Cambiamo Insieme</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
   <style>
-	  body {
-	  overflow-x: hidden;
-	}
+    body { overflow-x: hidden; }
 
     .section-content {
       max-width: 960px;
       margin: 0 auto;
+      color: #111;         /* testo più scuro */
+      line-height: 1.75;   /* leggibilità */
     }
 
-    .section-content p {
+    /* Effetto comparsa */
+    .section-content p,
+    .section-content li {
       font-size: 1em;
-      line-height: 1.6;
-      margin-bottom: 1.5em;
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
-
-    .section-content p.visible {
+    .section-content p.visible,
+    .section-content li.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -43,89 +44,75 @@
       width: 150px;
       height: 1.5px;
       background-color: #ccc;
-      margin: 2em auto;
+      margin: -2em auto;
     }
+
 
     h2.centered-title {
       text-align: center;
       margin-top: 2em;
       font-size: 1.3em;
     }
-	/* Container orizzontale per i post-it */
-	.postit-container {
-	  display: flex;
-	  justify-content: center;
-	  gap: 1.5em;
-	  margin-top: 3em;
-	  flex-wrap: wrap;
-	}
 
-	/* Post-it base */
-	.postit {
-	  width: 120px;
-	  height: 120px;
-	  font-family: 'Permanent Marker', cursive;
-	  font-size: 1.1em;
-	  color: #111;
-	  font-weight: bold;
-	  text-align: center;
-	  padding: 1em;
-	  opacity: 0.85;
-	  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  border-radius: 4px;
-	  transform: rotate(-3deg);
-	}
+    /* Blocchi immagine metà superiore/inferiore */
+    .image-half-top,
+    .image-half-bottom {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: block;
+    }
+    /* Altezza responsiva con padding-top proporzionale */
+    .image-half-top::before,
+    .image-half-bottom::before {
+      content: "";
+      display: block;
+      padding-top: 25%; /* 1:4 di altezza rispetto alla larghezza */
+    }
+    .image-half-top {
+      background-image: url('images/goals_top.jpg');
+      margin-bottom: 30px; /* spazio sotto l'immagine top */
+	  margin-top: -20px;    /* spazio sopra l'immagine bottom */
+    }
+    .image-half-bottom {
+      background-image: url('images/goals_bot.jpg');
+      margin-top: 30px;    /* spazio sopra l'immagine bottom */
+      margin-bottom: 30px; /* spazio dal footer */
+    }
 
-	/* Colori post-it */
-	.postit.yellow {
-	  background: #fff176;
-	}
-
-	.postit.green {
-	  background: #69f0ae;
-	}
-
-	.postit.pink {
-	  background: #ff8a80;
-	}
-
-	/* Responsive: dimensioni minori su schermi piccoli */
-	@media screen and (max-width: 600px) {
-	  .postit {
-		width: 90px;
-		height: 90px;
-		font-size: 0.8em;
-		opacity: 0.75;
-	  }
-	}
-
-
-
+    /* Migliora leggibilità dell'elenco su mobile */
+    ol.fimmg-list {
+      padding-left: 1em;
+    }
+    @media (max-width: 480px) {
+      .section-content { padding: 0 1rem; }
+    }
   </style>
 </head>
+
 <body class="is-preload">
-
   <div id="wrapper">
-<!-- Logo Centrale -->
-		<div style="text-align: center; margin-top: 1em;">
-		  <img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
-		</div>
-    <!-- Header (logo + motto) -->
+
+    <!-- Logo Centrale -->
+	   <div style="text-align: center; margin-top: 1em;">
+			  <a href="index.html">
+				<img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
+			  </a>
+			</div>
+
+    <!-- Header -->
     <header id="header">
-	  <div class="inner" style="justify-content: flex-end;">
-		<nav>
-		  <ul>
-			<li><a href="#menu">Menu</a></li>
-		  </ul>
-		</nav>
-	  </div>
-	</header>
+      <div class="inner" style="justify-content: flex-end;">
+        <nav>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-
-    <!-- Menu a scomparsa -->
+    <!-- Menu -->
     <nav id="menu">
       <h2>Menu</h2>
       <ul>
@@ -140,54 +127,39 @@
     <div id="main">
       <div class="inner">
 
-        <!-- Header grafico cliccabile -->
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-          <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
-           
-            <div>
-              <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
-              <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
-            </div>
-          </header>
-        </a>
+<!--
+<a href="index.html" style="text-decoration: none; color: inherit;">
+  <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
+    <div>
+      <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
+      <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
+    </div>
+  </header>
+</a>
+-->
 
-        <!-- Titolo e linea -->
+
+        <!-- Titolo e separatore -->
         <div class="separator"></div>
         <h2 class="centered-title">Cosa vogliamo fare!</h2>
 
-        <!-- Testo a comparsa -->
- <div class="section-content">
+        <!-- Immagine metà superiore -->
+        <div class="image-half-top" aria-hidden="true"></div>
 
+        <!-- Contenuto -->
+        <div class="section-content">
+          <ol class="fimmg-list">
+            <li>Vogliamo rendere questo lavoro di nuovo <b>sostenibile</b>, riequilibrare il tempo di lavoro e quello della <b>nostra vita</b> attraverso incentivi ed organizzazione.</li>
+			<li><b>Ridurre il peso della burocrazia</b> per restituire tempo all’attività clinica.</li>
+            <li>Garantire la possibilità di <b>assumere personale di studio</b> a tutti i medici, incentivare la diagnostica di primo livello.</li>
+            <li>Favorire le <b>indennità per i gruppi e forme associative</b> in ambito urbano, incentivare la presenza capillare nei piccoli centri.</li>
+            <li>Gestire l’assistenza domiciliare con <b>protocolli finalmente chiari e condivisi.</b></li>
+            <li><b>Restituire una voce autorevole alla categoria</b>, che sia in grado di farsi sentire.</li>
+          </ol>
+        </div>
 
-<div class="section-content">
-  <ol style="padding-left: 1em; line-height: 1.8;">
-    <li>Ridurre il peso della burocrazia è fondamentale per restituire tempo ed energia alla relazione con i pazienti e alla nostra attività clinica.</li>
-    
-    <li>Tutti i medici devono poter contare su personale di studio adeguato, condizione essenziale per lavorare con efficienza, dignità e sicurezza.</li>
-    
-    <li>Vogliamo favorire la nascita di reti e forme associative nei contesti urbani e garantire la presenza capillare della medicina generale nei piccoli centri.</li>
-    
-    <li>Chi lavora in contesti difficili va sostenuto con strumenti concreti: incentivi, supporto organizzativo e riconoscimento del valore del suo impegno.</li>
-    
-    <li>Il Ruolo Unico va normato con garanzie reali: trasparenza, parità di diritti, accesso alle risorse e percorsi chiari per chi entra nella professione.</li>
-    
-    <li>L’assistenza domiciliare deve essere gestita con protocolli condivisi e riferimenti certi, per evitare ambiguità e garantire continuità nella presa in carico.</li>
-    
-    <li>La rappresentanza deve tornare a essere vicina, presente, trasparente e capace di ascoltare davvero le esigenze dei colleghi sul campo.</li>
-    
-    <li>Vogliamo una formazione utile, aggiornata, accessibile e pensata per accompagnare davvero la crescita professionale dei medici di medicina generale.</li>
-  </ol>
-  
-	  <div class="postit-container">
-	  <div class="postit yellow">DREAM BIG...</div>
-	  <div class="postit green">...SET GOALS</div>
-	  <div class="postit pink">TAKE ACTION!</div>
-	</div>
-
-</div>
-
-</div>
-
+        <!-- Immagine metà inferiore -->
+        <div class="image-half-bottom" aria-hidden="true"></div>
 
       </div>
     </div>
@@ -195,14 +167,7 @@
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
-        <section>
-          <ul class="icons">
-            <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="https://wa.me/393331112233" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-            <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-          </ul>
-        </section>
+
         <ul class="copyright">
           <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
@@ -218,21 +183,24 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Script comparsa testo -->
+  <!-- Script comparsa testo (p + li) con leggero stagger -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".section-content p, .section-content li");
+
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            // leggero ritardo progressivo per effetto "stagger"
+            const index = Array.from(elements).indexOf(entry.target);
+            entry.target.style.transitionDelay = (index * 80) + "ms";
             entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1 });
 
-      document.querySelectorAll(".section-content p").forEach(p => {
-        observer.observe(p);
-      });
+      elements.forEach(el => observer.observe(el));
     });
   </script>
 </body>

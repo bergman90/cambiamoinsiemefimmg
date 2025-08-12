@@ -74,7 +74,7 @@
       width: 150px;
       height: 1.5px;
       background-color: #ccc;
-      margin: 2em auto;
+      margin: -2em auto;
     }
 
     h2.centered-title {
@@ -105,13 +105,17 @@
     .bio-text {
       flex: 1;
     }
+	
   </style>
 </head>
 <body class="is-preload">
 <!-- Logo Centrale -->
 		<div style="text-align: center; margin-top: 1em;">
-		  <img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
+		  <a href="index.html">
+			<img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
+		  </a>
 		</div>
+
   <div id="wrapper">
 
     <!-- Header -->
@@ -141,29 +145,32 @@
       <div class="inner">
 
         <!-- Logo e motto -->
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-          <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
-            <div>
-              <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
-              <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
-            </div>
-          </header>
-        </a>
+<!--
+<a href="index.html" style="text-decoration: none; color: inherit;">
+  <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
+    <div>
+      <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
+      <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
+    </div>
+  </header>
+</a>
+-->
+
 
         <!-- Titolo -->
         <div class="separator"></div>
-        <h2 class="centered-title">Chi siamo!</h2>
+        <h2 class="centered-title">Chi siamo</h2>
 
         <!-- Immagine + testo -->
         <div class="section-content">
           <div class="about-container">
             <img src="images/chi siamo.jpg" />
             <div class="bio-text">
-				<p>Siamo un gruppo di mediche e medici di medicina generale che ha deciso di mettersi in gioco, uniti dal desiderio concreto di cambiare il volto della rappresentanza sindacale: renderla più vicina alle esigenze reali di chi lavora ogni giorno sul territorio, più trasparente, più partecipata, più efficace.</p>
+				<p>Siamo un gruppo di mediche e medici di medicina generale che ha deciso di mettersi in gioco, uniti dal desiderio concreto di cambiare il volto della rappresentanza sindacale: renderla più vicina alle esigenze reali di chi lavora ogni giorno sul territorio, <b>più trasparente, più partecipata, più efficace</b>.</p>
 
-				<p>Siamo colleghe e colleghi. Persone che ogni giorno affrontano visite, telefonate, burocrazia, urgenze e solitudini che non sono più sostenibili.</p>
+				<p>Siamo colleghe e colleghi. Persone che ogni giorno affrontano visite, telefonate, burocrazia, urgenze e solitudini che <b>non sono più sostenibili</b>.</p>
 
-				<p>Vogliamo ripartire da una partecipazione autentica con regole chiare e obiettivi condivisi. Superare l’isolamento che molti di noi vivono ogni giorno è il primo passo per ricostruire una comunità professionale in grado di affrontare le sfide che ci aspettano.</p></p>
+				<p>Vogliamo ripartire da una <b>partecipazione autentica con regole chiare e obiettivi condivisi</b>. Superare l’isolamento che molti di noi vivono ogni giorno è il primo passo per ricostruire una comunità professionale in grado di affrontare le sfide che ci aspettano.</p></p>
 
 				<p><strong>Abbiamo scelto di cambiare rotta per governare il cambiamento, non per subirlo.</strong></p>
             </div>
@@ -176,14 +183,7 @@
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
-        <section>
-          <ul class="icons">
-            <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="https://wa.me/393331112233" class="icon brands style2 fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-            <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-          </ul>
-        </section>
+
         <ul class="copyright">
           <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
