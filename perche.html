@@ -17,10 +17,10 @@
 <style>
   body { overflow-x: hidden; }
 
-  /* Header: allinea a destra come da inline originale */
+  /* Header: allinea a destra */
   #header .inner { justify-content: flex-end; }
 
-  /* Logo centrale (spostato da inline) */
+  /* Logo centrale */
   .logo-wrap { text-align: center; margin-top: 1em; }
   .logo-wrap img { height: 100px; }
 
@@ -77,20 +77,21 @@
     margin-top: -20px;
   }
 
-  /* Freccia centrata */
+  /* Freccia centrata con hit box circolare */
   .arrow-next {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
-    width: 112px;
-    height: 112px;
-    border-radius: 50%;
+    width: 120px;        /* hit box grande */
+    height: 120px;
+    border-radius: 50%;  /* forma circolare */
+    background: transparent;
     transition: transform 0.15s ease;
     outline-offset: 4px;
   }
   .arrow-next img {
-    height: 88px;
+    height: 90px;        /* dimensione effettiva freccia */
     width: auto;
     display: block;
   }
@@ -115,10 +116,13 @@
       text-align: left;
     }
     h2.centered-title { font-size: 1.4em; }
-    .about-container { gap: 1.25em; }
-    .arrow-next { width: 104px; height: 104px; margin: 1.5rem auto; }
+
+    .arrow-next {
+      width: 100px;
+      height: 100px;
+      margin: 1.5rem auto;
+    }
     .arrow-next img { height: 72px; }
-    .page-nav { margin-top: 1rem; }
   }
 
   /* Accessibilità */
@@ -127,6 +131,7 @@
     .arrow-next { transition: none; }
   }
 </style>
+
 
 </head>
 
