@@ -1,0 +1,36 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Freccia giù, stile disegnato</title>
+  <desc id="desc">Una freccia verso il basso con tratto a mano libera e piccoli segni decorativi.</desc>
+
+  <!-- Stile interno: usa currentColor per ereditare il colore dal CSS della pagina -->
+  <style>
+    .stroke-main { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    /* Secondo tratto sottile per effetto "sketch" */
+    .stroke-sketch { fill: none; stroke: currentColor; stroke-opacity: .35; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .doodle { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .5; }
+  </style>
+
+  <!-- GAMBO CURVO (principale) -->
+  <path class="stroke-main" d="M40 12
+           C38 22, 36 30, 36 38
+           C36 54, 48 60, 48 74
+           C48 86, 40 92, 40 98"></path>
+
+  <!-- GAMBO CURVO (secondo tratto “sketch” leggermente sfalsato) -->
+  <path class="stroke-sketch" d="M42 14
+           C40 24, 38 31, 38 39
+           C38 55, 50 61, 49 74
+           C49 85, 41 91, 41 97"></path>
+
+  <!-- PUNTA DELLA FRECCIA -->
+  <path class="stroke-main" d="M29 87 L40 108 L51 87"></path>
+
+  <!-- PUNTA (tratto extra leggero per effetto disegno) -->
+  <path class="stroke-sketch" d="M30.5 88.5 L40 106 L49.5 88.5"></path>
+
+  <!-- PICCOLI SEGNI DECORATIVI “giocosi” -->
+  <path class="doodle" d="M17 32 L12 29 M18 26 L14 23"></path>
+  <path class="doodle" d="M62 54 L67 51 M61 48 L65 45"></path>
+  <path class="doodle" d="M20 84 q-3 2 -6 0"></path>
+</svg>

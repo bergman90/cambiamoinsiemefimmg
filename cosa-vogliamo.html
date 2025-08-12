@@ -19,11 +19,17 @@
   <style>
     body { overflow-x: hidden; }
 
+    .logo-wrap { text-align: center; margin-top: 1em; }
+    .logo-wrap img { height: 100px; }
+
+    /* allinea il menu a destra come da inline style originale */
+    #header .inner { justify-content: flex-end; }
+
     .section-content {
       max-width: 960px;
       margin: 0 auto;
-      color: #111;         /* testo più scuro */
-      line-height: 1.75;   /* leggibilità */
+      color: #111;
+      line-height: 1.75;
     }
 
     /* Effetto comparsa */
@@ -47,7 +53,6 @@
       margin: -2em auto;
     }
 
-
     h2.centered-title {
       text-align: center;
       margin-top: 2em;
@@ -60,10 +65,9 @@
       width: 100%;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       display: block;
     }
-    /* Altezza responsiva con padding-top proporzionale */
     .image-half-top::before,
     .image-half-bottom::before {
       content: "";
@@ -72,32 +76,19 @@
     }
     .image-half-top {
       background-image: url('images/goals_top.jpg');
-      margin-bottom: 30px; /* spazio sotto l'immagine top */
-	  margin-top: -20px;    /* spazio sopra l'immagine bottom */
-    }
-    .image-half-bottom {
-      background-image: url('images/goals_bot.jpg');
-      margin-top: 30px;    /* spazio sopra l'immagine bottom */
-      margin-bottom: 30px; /* spazio dal footer */
+      margin-bottom: 30px;
+      margin-top: -20px;
     }
 
-    /* Migliora leggibilità dell'elenco su mobile */
-    ol.fimmg-list {
-      padding-left: 1em;
-    }
+    /* Lista principale */
+    ol.fimmg-list { padding-left: 1em; }
+    .section-content .fimmg-list { line-height: 1.9; }
+    .section-content .fimmg-list > li { margin-bottom: 0.6em; }
+
+    /* Mobile */
     @media (max-width: 480px) {
       .section-content { padding: 0 1rem; }
     }
-	/* Più spazio tra le righe dentro ogni punto */
-.section-content .fimmg-list {
-  line-height: 1.9; /* prova 1.9–2.0 se vuoi ancora più aria */
-}
-
-/* Più spazio tra un punto e l'altro */
-.section-content .fimmg-list > li {
-  margin-bottom: 0.6em; /* aumenta a 0.8em se serve */
-}
-
   </style>
 </head>
 
@@ -105,15 +96,15 @@
   <div id="wrapper">
 
     <!-- Logo Centrale -->
-	   <div style="text-align: center; margin-top: 1em;">
-			  <a href="index.html">
-				<img src="images/logo.png" alt="Logo FIMMG" style="height: 100px;">
-			  </a>
-			</div>
+    <div class="logo-wrap">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo FIMMG">
+      </a>
+    </div>
 
     <!-- Header -->
     <header id="header">
-      <div class="inner" style="justify-content: flex-end;">
+      <div class="inner">
         <nav>
           <ul>
             <li><a href="#menu">Menu</a></li>
@@ -137,18 +128,6 @@
     <div id="main">
       <div class="inner">
 
-<!--
-<a href="index.html" style="text-decoration: none; color: inherit;">
-  <header style="display: flex; align-items: center; justify-content: center; gap: 1em; text-align: center; margin-top: -70px; cursor: pointer;">
-    <div>
-      <h1 style="margin: 0;">FIMMG, Cambiamo Insieme</h1>
-      <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
-    </div>
-  </header>
-</a>
--->
-
-
         <!-- Titolo e separatore -->
         <div class="separator"></div>
         <h2 class="centered-title">Cosa vogliamo fare!</h2>
@@ -160,7 +139,7 @@
         <div class="section-content">
           <ol class="fimmg-list">
             <li>Vogliamo rendere questo lavoro di nuovo <b>sostenibile</b>, riequilibrare il tempo di lavoro e quello della <b>nostra vita</b> attraverso incentivi ed organizzazione.</li>
-			<li><b>Ridurre il peso della burocrazia</b> per restituire tempo all’attività clinica.</li>
+            <li><b>Ridurre il peso della burocrazia</b> per restituire tempo all’attività clinica.</li>
             <li>Garantire la possibilità di <b>assumere personale di studio</b> a tutti i medici, incentivare la diagnostica di primo livello.</li>
             <li>Favorire le <b>indennità per i gruppi e forme associative</b> in ambito urbano, incentivare la presenza capillare nei piccoli centri.</li>
             <li>Gestire l’assistenza domiciliare con <b>protocolli finalmente chiari e condivisi.</b></li>
@@ -177,9 +156,9 @@
     <!-- Footer -->
     <footer id="footer">
       <div class="inner">
-
         <ul class="copyright">
-          <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          <li>&copy; FIMMG Cambiamo Insieme. Tutti i diritti riservati.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
       </div>
     </footer>
@@ -197,20 +176,16 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const elements = document.querySelectorAll(".section-content p, .section-content li");
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // leggero ritardo progressivo per effetto "stagger"
-            const index = Array.from(elements).indexOf(entry.target);
-            entry.target.style.transitionDelay = (index * 80) + "ms";
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const index = Array.from(elements).indexOf(entry.target);
+          entry.target.style.transitionDelay = (index * 80) + "ms";
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         });
       }, { threshold: 0.1 });
-
-      elements.forEach(el => observer.observe(el));
+      elements.forEach((el) => observer.observe(el));
     });
   </script>
 </body>

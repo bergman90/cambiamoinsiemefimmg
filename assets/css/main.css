@@ -3363,3 +3363,29 @@ body:not(.is-touch) .tiles article.style3:hover > .image:before {
   letter-spacing: 0.5px;         /* spaziatura leggera */
 }
 
+.arrow-next {
+  text-align: center;
+  margin-top: -3em 0;
+  margin-bottom: 1em; /* spazio sotto, se serve */
+}
+
+.arrow-next img {
+  width: 60px;               /* dimensione freccia */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
+}
+
+.arrow-next img:hover {
+  transform: translateY(5px); /* effetto di movimento */
+}
+
+/* Cambia il colore interno dell’SVG */
+.arrow-next img {
+  filter: invert(71%) sepia(18%) saturate(379%) hue-rotate(169deg) brightness(96%) contrast(93%);
+}
+/* Questo filtro dà un "powder blue" (#B0E0E6) */
+.section-content p:last-of-type {
+  margin-bottom: 0.5em; /* invece di 1.5em o simili */
+}
