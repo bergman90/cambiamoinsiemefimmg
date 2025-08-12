@@ -14,90 +14,120 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <style>
-    body { overflow-x: hidden; }
+<style>
+  body { overflow-x: hidden; }
 
-    /* Header: allinea a destra come da inline originale */
-    #header .inner { justify-content: flex-end; }
+  /* Header: allinea a destra come da inline originale */
+  #header .inner { justify-content: flex-end; }
 
-    /* Logo centrale (spostato da inline) */
-    .logo-wrap { text-align: center; margin-top: 1em; }
-    .logo-wrap img { height: 100px; }
+  /* Logo centrale (spostato da inline) */
+  .logo-wrap { text-align: center; margin-top: 1em; }
+  .logo-wrap img { height: 100px; }
 
-    .separator {
-      width: 150px;
-      height: 1.5px;
-      background-color: #ccc;
-      margin: -2em auto;
-    }
+  .separator {
+    width: 150px;
+    height: 1.5px;
+    background-color: #ccc;
+    margin: -2em auto;
+  }
 
-    h2.centered-title {
-      text-align: center;
-      margin-top: 2em;
-      font-size: 1.3em;
-    }
+  h2.centered-title {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.3em;
+  }
 
-    .section-content {
-      max-width: 960px;
-      margin: 1.5em auto;
-      padding: 0 1em;
-      text-align: justify;
-    }
+  .section-content {
+    max-width: 960px;
+    margin: 1.5em auto;
+    padding: 0 1em;
+    text-align: justify;
+  }
 
+  .section-content p {
+    font-size: 1em;
+    line-height: 1.9;
+    margin-bottom: 1.5em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+  }
+  .section-content p.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Immagini metà superiore/inferiore */
+  .image-half-top,
+  .image-half-bottom {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+  }
+  .image-half-top::before,
+  .image-half-bottom::before {
+    content: "";
+    display: block;
+    padding-top: 25%;
+  }
+  .image-half-top {
+    background-image: url('images/changehalftop.jpg');
+    margin-top: -20px;
+  }
+
+  /* Freccia centrata */
+  .arrow-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    transition: transform 0.15s ease;
+    outline-offset: 4px;
+  }
+  .arrow-next img {
+    height: 88px;
+    width: auto;
+    display: block;
+  }
+  .arrow-next:hover { transform: translateY(-2px); }
+  .arrow-next:focus-visible { outline: 2px solid currentColor; }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .section-content { padding: 0 1em; }
     .section-content p {
       font-size: 1em;
-      line-height: 1.9;            /* unico valore (prima era duplicato) */
-      margin-bottom: 1.5em;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+      line-height: 1.7;
+      color: #111;
     }
-    .section-content p.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .section-content blockquote {
+      font-size: 1em;
+      line-height: 1.6;
+      margin: 2em 0;
+      padding-left: 1em;
+      border-left: 3px solid #ccc;
+      color: #333;
+      text-align: left;
     }
+    h2.centered-title { font-size: 1.4em; }
+    .about-container { gap: 1.25em; }
+    .arrow-next { width: 104px; height: 104px; margin: 1.5rem auto; }
+    .arrow-next img { height: 72px; }
+    .page-nav { margin-top: 1rem; }
+  }
 
-    /* Immagini metà superiore/inferiore */
-    .image-half-top,
-    .image-half-bottom {
-      width: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;     /* invariato rispetto al tuo codice */
-      display: block;
-    }
-    .image-half-top::before,
-    .image-half-bottom::before {
-      content: "";
-      display: block;
-      padding-top: 25%;             /* altezza proporzionale */
-    }
-    .image-half-top {
-      background-image: url('images/changehalftop.jpg');
-      margin-top: -20px;
-    }
+  /* Accessibilità */
+  @media (prefers-reduced-motion: reduce) {
+    .section-content p { transition: none; transform: none; opacity: 1; }
+    .arrow-next { transition: none; }
+  }
+</style>
 
-
-    /* Mobile */
-    @media (max-width: 480px) {
-      .section-content { padding: 0 1em; }
-      .section-content p {
-        font-size: 1em;
-        line-height: 1.7;
-        color: #111;
-      }
-      .section-content blockquote {
-        font-size: 1em;
-        line-height: 1.6;
-        margin: 2em 0;
-        padding-left: 1em;
-        border-left: 3px solid #ccc;
-        color: #333;
-        text-align: left;
-      }
-      h2.centered-title { font-size: 1.4em; }
-    }
-  </style>
 </head>
 
 <body class="is-preload">
@@ -162,19 +192,14 @@
             Ci candidiamo per costruire un’alternativa. Insieme.
           </blockquote>
         </section>
+		
 
-        <!-- Immagine metà inferiore -->
-        <div class="image-half-bottom" aria-hidden="true"></div>
-
-      </div>
-    </div>
-
-	<!-- Freccia per passare alla pagina "perche.html" -->
-	<div class="arrow-next">
-	  <a href="cosa-vogliamo.html">
-		<img src="images/freccia.svg" alt="Vai alla pagina successiva">
-	  </a>
-	</div>
+		<!-- Freccia "prossima pagina" VICINA al testo -->
+		<div class="arrow-next">
+		  <a href="cosa-vogliamo.html">
+			<img src="images/freccia.svg" alt="Vai alla pagina successiva">
+		  </a>
+		</div>
 
 
     <!-- Footer -->
