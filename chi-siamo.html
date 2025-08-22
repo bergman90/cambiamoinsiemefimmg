@@ -142,6 +142,50 @@
   letter-spacing: 0.02em;
 }
 
+/* Contenitore freccia + etichetta */
+.next-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .45rem;
+}
+
+/* Freccia più grande */
+.arrow-next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 136px;   /* ↑ ingrandisci qui se vuoi ancora più grande */
+  height: 136px;
+  border-radius: 50%;
+  transition: transform .15s ease;
+  outline-offset: 4px;
+}
+.arrow-next img {
+  height: 104px;  /* ↑ dimensione visiva della freccia */
+  width: auto;
+  display: block;
+}
+.arrow-next:hover { transform: translateY(-2px); }
+.arrow-next:focus-visible { outline: 2px solid currentColor; }
+
+/* Etichetta "Prosegui la lettura" */
+.next-label {
+  font-size: 1rem;    /* piccola ma leggibile */
+  letter-spacing: .02em;
+  opacity: .88;
+  text-decoration: none;
+}
+.next-label:hover { text-decoration: underline; }
+
+/* Mobile: leggermente più compatta */
+@media (max-width: 480px) {
+  .arrow-next { width: 120px; height: 120px; }
+  .arrow-next img { height: 90px; }
+  .next-label { font-size: .82rem; }
+}
+
+
   </style>
 </head>
 
@@ -202,11 +246,15 @@
         </div>
 
         <!-- Freccia “avanti” vicina al testo -->
-        <div class="page-nav">
-          <a class="arrow-next" href="perche.html" aria-label="Vai alla pagina successiva: Perché ci candidiamo">
-            <img src="images/freccia.svg" alt="">
-          </a>
-        </div>
+		<div class="page-nav">
+		  <div class="next-link">
+			<a class="arrow-next" href="perche.html" aria-label="Vai alla pagina successiva: Perché ci candidiamo">
+			  <img src="images/freccia.svg" alt="" aria-hidden="true">
+			</a>
+			<a class="next-label" href="perche.html">Prosegui la lettura</a>
+		  </div>
+		</div>
+
 
       </div>
     </div>
