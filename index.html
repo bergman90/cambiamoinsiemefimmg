@@ -63,6 +63,21 @@
       margin: 1em auto;
     }
 	
+		.subtagline-cta {
+	  margin-top: .4rem;          /* poco sotto il sottotitolo */
+	  text-align: center;         /* o left/right se il tuo sottotitolo è allineato diverso */
+	}
+	.subtagline-cta .cta-link {
+	  font-size: clamp(.95rem, 1.8vw, 1.05rem);
+	  font-weight: 700;
+	  text-decoration: none;
+	}
+	.subtagline-cta .cta-link:hover span {
+	  text-decoration: underline;
+	  text-underline-offset: 2px;
+	}
+
+	
 
 
 
@@ -116,6 +131,14 @@
           <div>
             <h1 style="margin: 0;">FIMMG Cagliari, Cambiamo Insieme</h1>
             <p style="margin: 0;">Per una medicina generale forte, trasparente e partecipativa</p>
+			<p class="subtagline-cta">
+			  <a href="https://drive.google.com/file/d/1vl3I0Vv-Q9rBS9jj0dNEAHGFFeibc1xL/view"
+				 target="_blank" rel="noopener"
+				 class="cta-link icon solid fa-download">
+				<span>Scarica la lista e sostienici!</span>
+			  </a>
+			</p>
+
           </div>
         </header>
 
