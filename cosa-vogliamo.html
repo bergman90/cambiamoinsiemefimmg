@@ -149,6 +149,63 @@
   .goals-grid { grid-template-columns: 1fr; }
 }
 
+/* Immagine centrata in fondo */
+.center-image-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 28px auto 8px;
+  padding: 0 1rem;            /* un filo di respiro ai lati */
+}
+.center-image-wrap img {
+  width: min(100%, 860px);     /* responsive, con max larghezza elegante */
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+@media (max-width: 480px) {
+  .center-image-wrap { margin: 20px auto 4px; padding: 0 .75rem; }
+}
+
+.center-image-wrap a { text-decoration: none; cursor: pointer; }
+
+/* Centra davvero l'immagine in fondo */
+.center-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;     /* fallback se il tema sovrascrive flex */
+  margin: 28px auto 8px;
+  padding: 0 1rem;
+}
+.center-image-wrap a { display: inline-block; }
+.center-image-wrap img {
+  display: block;
+  margin: 0 auto;         /* fallback */
+  width: min(100%, 860px);
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.08);
+}
+.center-image-wrap figure { 
+  margin: 0; 
+  text-align: center; 
+  display: inline-block; 
+}
+.center-image-wrap .center-caption {
+  margin-top: 10px;
+  font-weight: 700;            /* grassetto */
+}
+.center-image-wrap .center-caption a {
+  color: inherit;
+  text-decoration: none;
+}
+.center-image-wrap .center-caption a:hover,
+.center-image-wrap .center-caption a:focus {
+  text-decoration: underline;
+}
+
+
 	
   </style>
 </head>
@@ -184,7 +241,7 @@
         <li><a href="perche.html">Perché ci candidiamo</a></li>
         <li><a href="cosa-vogliamo.html">Cosa vogliamo fare</a></li>
 				<li>
-		  <a href="https://drive.google.com/file/d/1vl3I0Vv-Q9rBS9jj0dNEAHGFFeibc1xL/view?usp=sharing"
+		  <a href="https://drive.google.com/file/d/1FnAs99FIvHaLO61YWF1eU2cMeKmHgqS0/view?usp=sharing"
 			 target="_blank" rel="noopener"
 			 class="icon solid fa-download">
 			<span>Scarica la lista e sostienici</span>
@@ -254,6 +311,30 @@
     </article>
   </div>
 </div>
+
+<!-- Immagine centrata in fondo pagina -->
+<!-- Immagine centrata in fondo pagina (cliccabile) -->
+<!-- Immagine centrata in fondo pagina + didascalia link -->
+<div class="center-image-wrap">
+  <figure>
+    <a
+      href="https://drive.google.com/file/d/1FnAs99FIvHaLO61YWF1eU2cMeKmHgqS0/view?usp=sharing"
+      target="_blank" rel="noopener"
+      aria-label="Scarica la lista – Sostienici, Cambiamo Insieme!"
+    >
+      <img src="images/chi-centro.jpg" alt="Sostienici, Cambiamo Insieme!" loading="lazy">
+    </a>
+    <figcaption class="center-caption">
+      <a
+        href="https://drive.google.com/file/d/1FnAs99FIvHaLO61YWF1eU2cMeKmHgqS0/view?usp=sharing"
+        target="_blank" rel="noopener"
+      ><strong>Sostienici, Cambiamo Insieme!</strong></a>
+    </figcaption>
+  </figure>
+</div>
+
+
+
 
 
       </div>

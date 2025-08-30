@@ -173,6 +173,23 @@
   .arrow-next img { height: 90px; }
   .next-label { font-size: .82rem; }
 }
+/* Blocco immagine + testo affiancati */
+.media-row {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr; /* img | testo */
+  gap: 1.25rem;
+  align-items: start;
+  margin: 1.25rem 0;
+}
+.media-row figure { margin: 0; }
+.media-row img { width: 100%; height: auto; border-radius: 4px; display: block; }
+.media-row p { margin: 0; } /* niente margine extra dentro il blocco */
+
+/* Mobile: impila verticalmente */
+@media (max-width: 768px) {
+  .media-row { grid-template-columns: 1fr; }
+}
+
 
 </style>
 
@@ -209,7 +226,7 @@
         <li><a href="perche.html">Perché ci candidiamo</a></li>
         <li><a href="cosa-vogliamo.html">Cosa vogliamo fare</a></li>
 				<li>
-		  <a href="https://drive.google.com/file/d/1vl3I0Vv-Q9rBS9jj0dNEAHGFFeibc1xL/view?usp=sharing"
+		  <a href="https://drive.google.com/file/d/1FnAs99FIvHaLO61YWF1eU2cMeKmHgqS0/view?usp=sharing"
 			 target="_blank" rel="noopener"
 			 class="icon solid fa-download">
 			<span>Scarica la lista e sostienici</span>
@@ -234,9 +251,20 @@
             La medicina generale sta vivendo una crisi strutturale. Negli ultimi dieci anni il <b>carico clinico e burocratico sono aumentati in maniera esponenziale</b>, senza un incremento sostanziale delle risorse umane o economiche. Il <b>burnout è in crescita</b> e molti colleghi e colleghe lavorano in condizioni di isolamento, senza supporti adeguati.
           </p>
 
-          <p>
-            Stiamo affrontando <b>sfide profonde</b>, destinate a diventare sempre più complesse: invecchiamento della popolazione, aumento delle cronicità, complessità terapeutica, consumismo sanitario, nuove fragilità sociali e crisi vocazionale, <b>questa professione così come è non attira le nuove generazioni.</b> Ma ad affrontare questi ostacoli siamo spesso rimasti soli, con un SSN in aperta ritirata dai territori, nonostante i proclami.
-          </p>
+          <div class="media-row">
+			  <figure>
+				<img src="images/chi-sx.jpg" loading="lazy">
+			  </figure>
+			  <p>
+				Stiamo affrontando <b>sfide profonde</b>, destinate a diventare sempre più complesse:
+				invecchiamento della popolazione, aumento delle cronicità, complessità terapeutica,
+				consumismo sanitario, nuove fragilità sociali e crisi vocazionale,
+				<b>questa professione così come è non attira le nuove generazioni.</b>
+				Ma ad affrontare questi ostacoli siamo spesso rimasti soli, con un SSN in aperta ritirata
+				dai territori, nonostante i proclami.
+			  </p>
+			</div>
+
 
           <p>
             In questi anni non sono stati ottenuti risultati concreti per ridurre la burocrazia, migliorare l'organizzazione ed affrontare le criticità. Le decisioni spesso vengono calate dall’alto, senza un reale confronto. <b>Da più di 15 anni non viene rinnovato un AIR in Sardegna</b>.
